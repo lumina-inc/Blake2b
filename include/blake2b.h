@@ -4,6 +4,10 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * The BLAKE2b initialization vectors
  */
@@ -71,4 +75,8 @@ int blake2b_update(blake2b_state* S, const void* in, size_t inlen);
 int blake2b_final(blake2b_state* S, void* out, size_t outlen);
 int blake2b(void* out, size_t outlen, const void* in, size_t inlen,
             const void* key, size_t keylen);
+
+#ifdef __cplusplus
+}
+#endif
 #endif
